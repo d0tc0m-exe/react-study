@@ -12,7 +12,7 @@ function App(props) {
       <div className="App">
         <Header />
         <Aside />
-        <div class="content">
+        <div className="content">
           <Route exact render={ () => <Main state={props.state.profilePage} />} path="/profile"></Route>
           <Route exact render={ () => <Dialogs  state={props.state.dialogsPage} />} path="/dialogs"></Route>
         </div>
