@@ -1,0 +1,23 @@
+.layout {
+    position: relative;
+    left: 50px;
+    top: 10px;
+    width: 800px;
+}
+
+.wrapper {
+    grid-area: profile;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+  
+.image {
+    position: relative;
+    top: -40px;
+    width: 250px;
+    height: 250px;
+}

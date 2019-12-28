@@ -1,0 +1,26 @@
+.search {
+    width: 650px;
+    height: 50px;
+    position: relative;
+    left: 50px;
+    top: -50px;
+}
+
+.input {
+    width: 550px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 3px;
+    background: transparent;
+    color: white;
+}
+  
+.btn {
+    position: relative;
+    left: 10px;
+    top: -3px;
+    width: 80px;
+    height: 55px;
+    background: transparent;
+    color: white;
+}

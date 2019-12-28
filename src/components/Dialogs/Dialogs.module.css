@@ -1,0 +1,17 @@
+.wrapper {
+    background: #303030;
+    display: flex;
+    justify-content: space-between;
+}
+
+.block {
+    width: 300px;
+    border: 1px solid #303030;
+    border-right-color: #474747;
+    max-height: 710px;
+    overflow-y: scroll;
+}
+
+.container {
+    margin-right: 700px;
+}

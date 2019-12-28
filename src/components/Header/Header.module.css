@@ -1,0 +1,32 @@
+.list {
+    list-style-type: none;
+    display: -webkit-inline-box;
+}
+  
+.list li {
+    margin-top: -20px;
+}
+
+.logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 11vmin;
+    pointer-events: none;
+}  
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    grid-area: header;
+    height: 10vmin;
+    width: 100%;
+    background: #ff8f4a;
+}
+
+@keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
