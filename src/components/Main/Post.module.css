@@ -7,12 +7,6 @@
     display: block;
 }
   
-.title {
-    position: relative;
-    top: -15px;
-    left: 5px;
-}
-  
 .container {
     position: relative;
     left: 50px;
@@ -23,7 +17,7 @@
   
 .txt {
     position: relative;
-    top: -35px;
+    top: 5px;
     left: 5px;
 }
   

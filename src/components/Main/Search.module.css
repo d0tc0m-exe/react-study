@@ -23,4 +23,6 @@
     height: 55px;
     background: transparent;
     color: white;
+    position: relative;
+    top: -18px;
 }

@@ -1,18 +1,22 @@
 import React from 'react';
 import styl from './Search.module.css';
 
+const Search = (props) => {
 
-const refer = React.createRef();
+    const refer = React.createRef();
 
-let addPost = () => {
-    let text = refer.current.value;
-    alert(text);
-}
+    let addPost = () => {
+        props.addPost();
+    }
 
-const Search = () => {
+    let onTextChange = () => {
+        let text = refer.current.value;
+        props.updateNewPostText(text);
+    }
+
     return(
         <div className={styl.search}>
-            <input ref={ refer } className={styl.input} type="text" placeholder="Find Post"></input>
+            <textarea onChange={ onTextChange } ref={ refer } className={styl.input} value={props.newPostData} placeholder="Find Post"></textarea>
             <button onClick={ addPost } className={styl.btn}>Search</button>
         </div>
     );

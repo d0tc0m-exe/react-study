@@ -1,8 +1,11 @@
+let rerenderEntireTree = ("Hello, this is text");
+
 let state = {
     profilePage: {
         postData: [
-            {id: 1, message: 'Hello, this is post 1', title: 'Post1'}, 
-            {id: 2, message: 'Hello, this is post 2', title: 'Post 2'}]
+            {id: 1, message: 'Hello, this is post 1'}, 
+            {id: 2, message: 'Hello, this is post 2'}],
+        newTextData: 'example'
     },
     dialogsPage: {
         contactData: [
@@ -27,6 +30,27 @@ let state = {
             {id: 4, text: 'Privet'}
         ]
     }
+}
+
+window.state = state;
+
+export let addPost = () => {
+    let newPost = {
+        id: 3,
+        message: state.profilePage.newTextData,
+    }
+    state.profilePage.postData.push(newPost);
+    state.profilePage.newTextData = '';
+    rerenderEntireTree(state);
+}
+
+export let updateNewPostText = (newText) => {
+    state.profilePage.newTextData = newText;
+    rerenderEntireTree(state);
+}
+
+export let subscribe = (observer) => {
+    rerenderEntireTree = observer; // pattern observer
 }
 
 export default state;

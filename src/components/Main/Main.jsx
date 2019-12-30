@@ -10,7 +10,7 @@ const Main = (props) => {
     return(
         <div>
             <Profile />
-            <Search />
+            <Search updateNewPostText={ props.updateNewPostText } addPost={props.addPost} />
             { posts }
         </div>
     );

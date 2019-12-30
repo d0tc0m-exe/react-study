@@ -6,8 +6,7 @@ const Post = (props) => {
                 <div className={s.container}>
                         <div className={s.image}></div>
                         <div className={s.post}>
-                        <h4 className={s.title}>{ props.title }</h4>
-                        <small><p className={s.txt}>{ props.message }</p></small>
+                        <p className={s.txt}>{ props.message }</p>
                     </div>
                 </div>
     );
