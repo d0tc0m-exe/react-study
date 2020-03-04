@@ -1,7 +1,6 @@
 import React from 'react';
 import styless from './Dialogs.module.css';
 import Contact from './Contact';
-import {NavLink} from 'react-router-dom';
 import Message from './Message';
 
 const Dialogs = (props) => {
