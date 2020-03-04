@@ -2,6 +2,7 @@ import React from 'react';
 import styless from './Dialogs.module.css';
 import Contact from './Contact';
 import Message from './Message';
+import TextField from './TextField';
 
 const Dialogs = (props) => {
 
@@ -16,6 +17,7 @@ const Dialogs = (props) => {
                 </div>
             </div>
             <div className={styless.container}>
+                <TextField updateNewMessageText={ props.updateNewMessageText } addMessage={props.addMessage} />
                 { messages }
             </div>
         </div>

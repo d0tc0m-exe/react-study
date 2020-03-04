@@ -4,13 +4,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {addPost, updateNewPostText, addMessage, updateNewMessageText} from './redux/state.js';
+import {addPost, updateNewPostText, updateNewMessageText, addMessage} from './redux/state.js';
 import { BrowserRouter } from 'react-router-dom';
 
 export let rerenderEntireTree = (state) => {
     ReactDOM.render(
     <BrowserRouter>
-        <App updateNewPostText={ updateNewPostText } state={state} />
+        <App updateNewPostText={ updateNewPostText } updateNewMessageText={ updateNewMessageText } addPost={addPost} addMessage={addMessage} state={state} />
     </BrowserRouter>, document.getElementById('root'));
 }
 

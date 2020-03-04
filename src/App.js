@@ -14,7 +14,7 @@ function App(props) {
         <Aside />
         <div className="content">
           <Route exact render={ () => <Main state={props.state.profilePage} addPost={props.addPost} updateNewPostText={ props.updateNewPostText } />} path="/profile"></Route>
-          <Route exact render={ () => <Dialogs  state={props.state.dialogsPage} />} path="/dialogs"></Route>
+          <Route exact render={ () => <Dialogs state={props.state.dialogsPage} addMessage={props.addMessage} updateNewMessageText={props.updateNewMessageText} />} path="/dialogs"></Route>
         </div>
       </div>
     </BrowserRouter>
