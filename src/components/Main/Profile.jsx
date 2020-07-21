@@ -11,8 +11,7 @@ const Profile = () => {
             <div className={st.profile}>
             <img className={st.image} src={logo} alt="Logo"></img>
                 <div>
-                    <span><h3>Name: Ivan Diakov</h3></span>
-                    <span><h3>Age: 12</h3></span>
+                    <span><h3>Name: Name Surname</h3></span>
                     <span><h3>Phone: 88005553535</h3></span>
                 </div>
             </div>
