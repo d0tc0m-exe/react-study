@@ -13,8 +13,12 @@ function App(props) {
         <Header />
         <Aside />
         <div className="content">
-          <Route exact render={ () => <Main state={props.state.profilePage} addPost={props.addPost} updateNewPostText={ props.updateNewPostText } />} path="/profile"></Route>
-          <Route exact render={ () => <Dialogs state={props.state.dialogsPage} addMessage={props.addMessage} updateNewMessageText={props.updateNewMessageText} />} path="/dialogs"></Route>
+          <Route exact render={ () => <Main 
+            state={props.state.profilePage} 
+            dispatch={props.dispatch} />} path="/profile"></Route>
+          <Route exact render={ () => <Dialogs 
+            state={props.state.dialogsPage} 
+            dispatch={props.dispatch} />} path="/dialogs"></Route>
         </div>
       </div>
     </BrowserRouter>

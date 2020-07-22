@@ -31,42 +31,44 @@ let store = {
             newMessageData: 'example'
         }
     },
-    addPost() {
-        let newPost = {
-            id: 3,
-            message: store._state.profilePage.newTextData,
-        }
-        store._state.profilePage.postData.push(newPost);
-        store._state.profilePage.newTextData = '';
-        store._callSubscriber(store._state);
-    },
-    updateNewPostText(newText) {
-        store._state.profilePage.newTextData = newText;
-        store._callSubscriber(store._state);
-    },
-    addMessage() {
-        let newMessage = {
-            id: 5,
-            text: store._state.dialogsPage.newMessageData,
-        }
-        store._state.dialogsPage.messagesData.push(newMessage);
-        store._state.dialogsPage.newMessageData = '';
-        store._callSubscriber(store._state);
-    },
-    updateNewMessageText(newMessg) {
-        store._state.dialogsPage.newMessageData = newMessg;
-        store._callSubscriber(store._state);
-    }, 
     subscribe(observer) {
         store._callSubscriber = observer; // pattern observer
     },
+    
     getState() {
         return store._state;
     },
     _callSubscriber() {
         console.log("State changed!");
+    },
+
+    dispatch(action) {
+        if(action.type === "ADD-POST") {
+            let newPost = {
+                id: 3,
+                message: store._state.profilePage.newTextData,
+            }
+            store._state.profilePage.postData.push(newPost);
+            store._state.profilePage.newTextData = '';
+            store._callSubscriber(store._state);
+        } else if(action.type === "UPDATE-NEW-POST-TEXT") {
+            store._state.profilePage.newTextData = action.newText;
+            store._callSubscriber(store._state);
+        } else if(action.type === "ADD-MESSAGE") {
+            let newMessage = {
+                id: 5,
+                text: store._state.dialogsPage.newMessageData,
+            }
+            store._state.dialogsPage.messagesData.push(newMessage);
+            store._state.dialogsPage.newMessageData = '';
+            store._callSubscriber(store._state);
+        } else if (action.type === "UPDATE-NEW-MESSAGE-TEXT") {
+            store._state.dialogsPage.newMessageData = action.newMessg;
+            store._callSubscriber(store._state);
+        }
     }
 }
+
 
 window.store = store;
 export default store;

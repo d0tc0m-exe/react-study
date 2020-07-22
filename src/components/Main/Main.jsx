@@ -5,12 +5,13 @@ import Post from './Post';
 
 const Main = (props) => {
 
-    let posts = props.state.postData.map(p => <Post id={p.id} message={p.message} title={p.title} />);
+    let posts = props.state.postData.map(p => <Post
+        id={p.id} message={p.message} title={p.title} />);
 
     return(
         <div>
             <Profile />
-            <Search updateNewPostText={ props.updateNewPostText } addPost={props.addPost} />
+            <Search dispatch={props.dispatch} />
             { posts }
         </div>
     );
