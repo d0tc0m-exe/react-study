@@ -1,3 +1,12 @@
+import profileReducer from "./reducers/profileReducer";
+import dialogsReducer from "./reducers/dialogsReducer";
+import sidebarReducer from "./reducers/sidebarReducer";
+
+var ADD_POST = 'ADD-POST';
+var UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+var ADD_MESSAGE = 'ADD-MESSAGE';
+var UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+
 let store = {
     _state: {
         profilePage: {
@@ -29,7 +38,8 @@ let store = {
                 {id: 4, text: 'Privet'}
             ],
             newMessageData: 'example'
-        }
+        },
+        sidebar: {}
     },
     subscribe(observer) {
         store._callSubscriber = observer; // pattern observer
@@ -43,32 +53,29 @@ let store = {
     },
 
     dispatch(action) {
-        if(action.type === "ADD-POST") {
-            let newPost = {
-                id: 3,
-                message: store._state.profilePage.newTextData,
-            }
-            store._state.profilePage.postData.push(newPost);
-            store._state.profilePage.newTextData = '';
-            store._callSubscriber(store._state);
-        } else if(action.type === "UPDATE-NEW-POST-TEXT") {
-            store._state.profilePage.newTextData = action.newText;
-            store._callSubscriber(store._state);
-        } else if(action.type === "ADD-MESSAGE") {
-            let newMessage = {
-                id: 5,
-                text: store._state.dialogsPage.newMessageData,
-            }
-            store._state.dialogsPage.messagesData.push(newMessage);
-            store._state.dialogsPage.newMessageData = '';
-            store._callSubscriber(store._state);
-        } else if (action.type === "UPDATE-NEW-MESSAGE-TEXT") {
-            store._state.dialogsPage.newMessageData = action.newMessg;
-            store._callSubscriber(store._state);
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+        store._callSubscriber(store._state);
     }
 }
 
+export let addPostActionCreator = () => {
+    return { type: ADD_POST }
+}
+
+export let updateNewPostTextActionCreator = (text) => {
+    return { type: UPDATE_NEW_POST_TEXT, newText: text }
+}
+
+export let addMessageActionCreator = () => {
+    return { type: ADD_MESSAGE }
+}
+
+export let updateNewMessageTextActionCreator = (text) => {
+    return { type: UPDATE_NEW_MESSAGE_TEXT, newMessg: text }
+}
 
 window.store = store;
 export default store;

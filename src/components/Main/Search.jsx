@@ -1,17 +1,18 @@
 import React from 'react';
 import styl from './Search.module.css';
+import { updateNewPostTextActionCreator, addPostActionCreator } from '../../redux/state';
 
 const Search = (props) => {
 
     const refer = React.createRef();
 
     let addPost = () => {
-        props.dispatch({ type: "ADD-POST" });
+        props.dispatch(addPostActionCreator());
     }
 
     let onTextChange = () => {
         let text = refer.current.value;
-        props.dispatch({ type: "UPDATE-NEW-POST-TEXT", newText: text });
+        props.dispatch(updateNewPostTextActionCreator(text));
     }
 
     return(

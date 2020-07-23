@@ -18,7 +18,9 @@ const Dialogs = (props) => {
             </div>
             <div className={styless.container}>
                 <TextField dispatch={props.dispatch} />
-                { messages }
+                <div className={styless.messagesContainer}>
+                        { messages }
+                </div>
             </div>
         </div>
     );
