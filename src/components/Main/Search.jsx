@@ -1,6 +1,6 @@
 import React from 'react';
-import styl from './Search.module.css';
-import { updateNewPostTextActionCreator, addPostActionCreator } from '../../redux/state';
+import styl from '../../static/css/Main/Search.module.css';
+import { updateNewPostTextActionCreator, addPostActionCreator } from '../../redux/reducers/profileReducer';
 
 const Search = (props) => {
 

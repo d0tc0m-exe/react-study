@@ -1,5 +1,5 @@
 import React from 'react';
-import st from './Profile.module.css';
+import st from '../../static/css/Main/Profile.module.css';
 import logo from '../../static/images/logo.svg';
 import layout from '../../static/images/js.png';
 

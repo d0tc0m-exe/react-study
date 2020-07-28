@@ -1,6 +1,6 @@
 import React from 'react';
-import ss from './TextField.module.css';
-import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../redux/state';
+import ss from '../../static/css/Dialogs/TextField.module.css';
+import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../redux/reducers/dialogsReducer';
 
 const TextField = (props) => {
     

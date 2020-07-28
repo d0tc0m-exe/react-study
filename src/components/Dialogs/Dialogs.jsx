@@ -1,5 +1,5 @@
 import React from 'react';
-import styless from './Dialogs.module.css';
+import styless from '../../static/css/Dialogs/Dialogs.module.css';
 import Contact from './Contact';
 import Message from './Message';
 import TextField from './TextField';

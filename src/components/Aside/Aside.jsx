@@ -1,5 +1,5 @@
 import React from 'react';
-import sty from './Aside.module.css';
+import sty from '../../static/css/Aside/Aside.module.css';
 import {NavLink} from 'react-router-dom';
 
 const Aside = () => {

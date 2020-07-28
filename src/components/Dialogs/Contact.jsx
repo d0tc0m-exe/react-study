@@ -1,5 +1,5 @@
 import React from 'react';
-import contact from './Contact.module.css';
+import contact from '../../static/css/Dialogs/Contact.module.css';
 import {NavLink} from 'react-router-dom';
 
 const Post = (props) => {
