@@ -1,18 +1,13 @@
 import React from 'react';
 import Profile from './Profile';
-import Search from './Search';
-import Post from './Post';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 
 const Main = (props) => {
-
-    let posts = props.state.postData.map(p => <Post
-        id={p.id} message={p.message} title={p.title} />);
-
+    debugger
     return(
         <div>
             <Profile />
-            <Search dispatch={props.dispatch} />
-            { posts }
+            <MyPostsContainer store={props.store} dispatch={props.dispatch} />
         </div>
     );
 }

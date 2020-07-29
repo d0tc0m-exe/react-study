@@ -1,5 +1,5 @@
 import React from 'react';
-import mes from '../../static/css/Dialogs/Message.module.css';
+import mes from '../../../static/css/Dialogs/Message.module.css';
 
 const Message = (props) => {
     return(

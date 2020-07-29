@@ -1,5 +1,5 @@
 import React from 'react';
-import contact from '../../static/css/Dialogs/Contact.module.css';
+import contact from '../../../static/css/Dialogs/Contact.module.css';
 import {NavLink} from 'react-router-dom';
 
 const Post = (props) => {
@@ -7,10 +7,7 @@ const Post = (props) => {
 
     return (
                 <div className={contact.container}>
-                        <div className={contact.image}></div>
-                        <div className={contact.post}>
                         <NavLink className={contact.link} to={ path }><h4 className={contact.title}>{ props.name }</h4></NavLink>
-                    </div>
                 </div>
     );
 }

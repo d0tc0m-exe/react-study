@@ -1,29 +1,48 @@
 import React from 'react';
-import styless from '../../static/css/Dialogs/Dialogs.module.css';
-import Contact from './Contact';
-import Message from './Message';
-import TextField from './TextField';
+import ss from '../../static/css/Dialogs/Dialogs.module.css';
+import Message from './Messages/Message';
+import Contact from './Contacts/Contact';
 
 const Dialogs = (props) => {
+    let state = props.dialogsPage;
 
-    let messages = props.state.messagesData.map( m => <Message message={m.text} id={m.id} />);
-    let contacts = props.state.contactData.map( c => <Contact name={c.name} id={c.id} />);
+    let dialogsElements = state.contactData.map( d => <Contact name={d.name} id={d.id} />  );
+    let messagesElements = state.messagesData.map( m => <Message message={m.text} /> );
+    let newMessageBody = state.newMessageData;
 
-    return(
-        <div className={styless.wrapper}>
-            <div className={styless.block}>
-                <div className={styless.contacts}>
-                    { contacts }
+    let onSendMessageClick = () => {
+        props.addMessage();
+    }
+
+    let onNewMessageChange = (e) => {
+        let body = e.target.value;
+        props.updateNewMessageText(body);
+    }
+
+    console.log(state.messagesData); 
+
+    return (
+        <div className={ss.wrapper}>
+            <div className={ss.block}>
+                <div className={ss.contacts}>
+                    { dialogsElements }
                 </div>
             </div>
-            <div className={styless.container}>
-                <TextField dispatch={props.dispatch} />
-                <div className={styless.messagesContainer}>
-                        { messages }
+            <div className={ss.container}>
+                <div className={ss.messagesContainer}>
+                    { messagesElements }
+                </div>
+                <div className={ss.inp}>
+                    <div>
+                        <textarea className={ss.send} value={newMessageBody} onChange={onNewMessageChange} placeholder='Enter your message'></textarea>
+                    </div>
+                    <div>
+                        <button className={ss.butn} onClick={onSendMessageClick}>Send</button>
+                    </div>
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
 export default Dialogs;
