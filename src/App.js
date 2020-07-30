@@ -6,16 +6,15 @@ import Main from './components/Main/Main';
 import {BrowserRouter, Route} from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 
-function App(props) {
-  console.log(props.store.getState().dialogsPage);
+function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Header />
         <Aside />
         <div className="content">
-          <Route exact render={ () => <Main store={props.store} />} path="/profile"></Route>
-          <Route exact render={ () => <DialogsContainer store={props.store} />} path="/dialogs"></Route>
+          <Route exact render={ () => <Main />} path="/profile"></Route>
+          <Route exact render={ () => <DialogsContainer />} path="/dialogs"></Route>
         </div>
       </div>
     </BrowserRouter>
