@@ -1,0 +1,44 @@
+.wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    height: 150px;
+    margin-top: 10px;
+    color: white;
+}
+
+.block {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.button {
+    margin-top: 10px;
+}
+
+.container {
+    width: 700px;
+    border: 1px solid #ededed;
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.userInfoBlock {
+    margin-left: 10px;
+}
+
+.userLocationBlock {
+    margin-right: 10px;
+}
+
+.profilePhoto {
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    background: #f2cb2e;
+    border-radius: 100px;
+}

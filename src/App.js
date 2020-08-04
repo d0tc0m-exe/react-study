@@ -5,6 +5,7 @@ import Aside from './components/Aside/Aside';
 import Main from './components/Main/Main';
 import {BrowserRouter, Route} from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <div className="content">
           <Route exact render={ () => <Main />} path="/profile"></Route>
           <Route exact render={ () => <DialogsContainer />} path="/dialogs"></Route>
+          <Route exact render={ () => <UsersContainer />} path="/users"></Route>
         </div>
       </div>
     </BrowserRouter>
