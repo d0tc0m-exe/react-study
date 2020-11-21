@@ -1,15 +1,14 @@
 import React from 'react';
 import user from '../../static/css/Users/User.module.css';
+import * as axios from 'axios';
+import userImage from '../../static/images/user.png';
 
 let Users = (props) => {
-    
+
     if(props.users.length === 0) {
-        props.setUsers([
-            {id: 1, following: false, name: 'Name 1', status: 'Hello, this is status 1', location: {city: 'Minsk', country: 'White Russia:3'}}, 
-            {id: 2, following: true, name: 'Name 2', status: 'Hello, this is status 2', location: {city: 'Kyiv', country: 'Ukraine'}},
-            {id: 3, following: true, name: 'Name 3', status: 'Hello, this is status 3', location: {city: 'Moscow', country: 'Russia'}}, 
-            {id: 4, following: true, name: 'Name 4', status: 'Hello, this is status 4', location: {city: 'Prague', country: 'Czech Republic'}}
-        ]);
+        axios.get("https://social-network.samuraijs.com/api/1.0/users/").then(response => {
+            props.setUsers(response.data.items);
+        });
     }
 
     return(
@@ -19,7 +18,9 @@ let Users = (props) => {
                     u => 
                         <div key={u.id} className={user.wrapper}>
                             <div className={user.block}>
-                                <div className={user.profilePhoto}></div>
+                                <div>
+                                    <img className={user.profilePhoto} src={u.photos.small != null ? u.photos.small : userImage} alt=""/>
+                                </div>
                                 { u.following ? 
                                     <button onClick={ () => { props.unfollow(u.id) } } className={user.button}>Unfollow</button>
                                     : <button onClick={ () => { props.follow(u.id) } } className={user.button}>Follow</button>
@@ -31,8 +32,8 @@ let Users = (props) => {
                                     <h5>{u.status}</h5>
                                 </div>
                                 <div className={user.userLocationBlock}>
-                                    <h2>{u.location.country}, </h2>
-                                    <h3>{u.location.city} </h3>
+                                    <h2>Developer is, </h2>
+                                    <h3>lazy</h3>
                                 </div>
                             </div>
                         </div>
