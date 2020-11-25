@@ -10,6 +10,7 @@ const Aside = () => {
           <li className={sty.item}><NavLink className={sty.link} to="/dialogs">Messages</NavLink></li>
           <li className={sty.item}><NavLink className={sty.link} to="/news">News</NavLink></li>
           <li className={sty.item}><NavLink className={sty.link} to="/music">Music</NavLink></li>
+          <li className={sty.item}><NavLink className={sty.link} to="/users">Users</NavLink></li>
           <li className={sty.item}><NavLink className={sty.link} to="/settings">Settings</NavLink></li>
         </ul>
       </div>

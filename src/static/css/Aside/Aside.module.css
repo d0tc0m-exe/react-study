@@ -11,7 +11,7 @@
     left: -15px;
 }
   
-.item:nth-child(5n) {
+.item:nth-child(6n) {
     position: relative;
     top: 20px;
 }
