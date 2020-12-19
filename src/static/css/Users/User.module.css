@@ -42,3 +42,8 @@
     background: #f2cb2e;
     border-radius: 100px;
 }
+
+.selectedPage {
+    color: white;
+    font-weight: bold;
+}
