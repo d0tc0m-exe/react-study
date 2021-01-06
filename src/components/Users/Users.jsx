@@ -5,7 +5,7 @@ import userImage from '../../static/images/user.png';
 
 let Users = (props) => {
 
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
+    let pagesCount = Math.ceil(50 / props.pageSize);
 
     let pages = [];
     for(let i = 1; i <= pagesCount;i++) {
@@ -15,14 +15,14 @@ let Users = (props) => {
             break;
         }
     }
-
+    
     return(
         <div>
             <div>
                 {
                     pages.map(p => {
                         return <span className={ props.currentPage === p && user.selectedPage} 
-                            onClick={() => { props.onPageChanged(p); } }>{p}</span>
+                            onClick={ () => { props.onPageChanged(p); } }>{p}</span>
                     })
                 }
             </div>
