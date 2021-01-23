@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_USER_PROFILE = 'SET_USER_PROFILE';
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 let initialState = {
     postData: [
@@ -8,7 +10,9 @@ let initialState = {
         {id: 3, message: 'Hello, this is post 3'}, 
         {id: 4, message: 'Hello, this is post 4'}
     ],
-    newTextData: 'example'
+    newTextData: 'example',
+    profile: null,
+    isFetching: false
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -32,6 +36,11 @@ const profileReducer = (state = initialState, action) => {
             stateCopy.newTextData = action.newText;
             return stateCopy;
         }
+        case SET_USER_PROFILE: {
+            return { ...state, profile: action.profile }
+        }
+        case TOGGLE_IS_FETCHING:
+            return { ...state, isFetching: action.isFetching}
         default:
             return state;
     }
@@ -43,6 +52,14 @@ export let addPostActionCreator = () => {
 
 export let updateNewPostTextActionCreator = (text) => {
     return { type: UPDATE_NEW_POST_TEXT, newText: text }
+}
+
+export const setUserProfile = (profile) => {
+    return { type: SET_USER_PROFILE, profile }
+}
+
+export const toggleIsFetching = (isFetching) => {
+    return {type: TOGGLE_IS_FETCHING, isFetching}
 }
 
 export default profileReducer;

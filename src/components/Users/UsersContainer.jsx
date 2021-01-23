@@ -28,6 +28,7 @@ class UsersContainer extends React.Component {
     }
 
     render() {
+        debugger
         return <>
             { this.props.isFetching ? <div className={load.loader}><Loader /></div> : null}
             <Users
