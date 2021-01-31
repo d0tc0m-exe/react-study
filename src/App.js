@@ -14,7 +14,7 @@ function App() {
         <Header />
         <Aside />
         <div className="content">
-          <Route render={ () => <ProfileContainer />} path="/profile"></Route>
+          <Route exact render={ () => <ProfileContainer />} path="/profile/:id"></Route>
           <Route exact render={ () => <DialogsContainer />} path="/dialogs"></Route>
           <Route exact render={ () => <UsersContainer />} path="/users"></Route>
         </div>

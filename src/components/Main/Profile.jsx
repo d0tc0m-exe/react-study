@@ -2,11 +2,16 @@ import React from 'react';
 import st from '../../static/css/Main/Profile.module.css';
 import layout from '../../static/images/js.png';
 import Loader from '../Loader/Loader';
+import user from '../../static/images/user.png';
 
 
 const Profile = (props) => {
     if(!props.profile) {
         return <Loader />
+    }
+
+    if (!props.profile.photos.large) {
+        props.profile.photos.large = user;
     }
     
     return (

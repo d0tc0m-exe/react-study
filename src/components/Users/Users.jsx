@@ -16,7 +16,7 @@ let Users = (props) => {
             break;
         }
     }
-    debugger
+    
     return(
         <div>
             <div>
