@@ -2,9 +2,9 @@
     list-style-type: none;
     display: -webkit-inline-box;
 }
-  
-.list li {
-    margin-top: -20px;
+   
+.list h1 {
+    margin-top: 35px;
 }
 
 .logo {
@@ -15,12 +15,18 @@
 
 .header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
     grid-area: header;
     height: 10vmin;
     width: 100%;
     background: #ff8f4a;
 }
+
+.loginBlock {
+    margin-right: 100px;
+}
+
 
 @keyframes App-logo-spin {
     from {
