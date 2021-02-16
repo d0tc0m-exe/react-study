@@ -12,7 +12,8 @@ let initialState = {
     ],
     newTextData: 'example',
     profile: null,
-    isFetching: false
+    isFetching: false,
+    toggleFetchingProcess: []
 };
 
 const profileReducer = (state = initialState, action) => {
